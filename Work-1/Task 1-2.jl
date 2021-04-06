@@ -1,15 +1,15 @@
-#rad_str = input("Угол = ");
 println("Задание 1-2");
-print("Угол = ");
+#Пользовательский ввод
+println("Введите значение угла в радианах = ");
 rad_str = readline();
+#Попытка преобразовать строку к типу вещественное число
 rad = tryparse(Float64, rad_str );
-
+#Если введено не число, то программа прекращает свое выполнение
 if rad == nothing
   println("Ошибка ввода угла");
   quit();
 end;
-
-
+#Вычисления градусов, минут и секунд введеного значения угла
 deg_double = rad2deg(rad);
 max_degrees = 360;
 deg = trunc(Int, deg_double) % max_degrees;
