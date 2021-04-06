@@ -1,13 +1,18 @@
-rad_str = input("Угол = ");
+#rad_str = input("Угол = ");
+println("Задание 1-2");
+print("Угол = ");
+rad_str = readline();
 rad = tryparse(Float64, rad_str );
 
 if rad == nothing
-  throw(StopException("Ошибка ввода угла"));
+  println("Ошибка ввода угла");
   quit();
 end;
 
+
 deg_double = rad2deg(rad);
-deg = trunc(Int, deg_double);
+max_degrees = 360;
+deg = trunc(Int, deg_double) % max_degrees;
 frac_degree = deg_double - deg;
 min_in_deg = 60;
 min_double = frac_degree * min_in_deg;
